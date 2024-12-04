@@ -6,7 +6,7 @@ import './style.css'
 
 const TestComponent = () => {
     const [data,setData]=useState();
-    console.log("data",data)
+    
 
     const getData=()=>{
             axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=chicken").then((res)=>{
@@ -25,7 +25,7 @@ const TestComponent = () => {
 
     return(
 <div className='main-div'>
-    {data.map((item)=>{
+    {data?.map((item)=>{
         return(
         <div className='content'>
            <h1>{item?.strMeal}</h1>
